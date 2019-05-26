@@ -283,7 +283,7 @@ PlayersOnServer|@Server|将服务器内的所有玩家作为目标
 
 - 多坐标目标
 
-**@RandomLocationsInRing**<br>
+**@RandomLocationsInRing{a=X;min=X;max=X}**<br>
 获取环内随机数量坐标作为目标
 
 参数|默认值|描述
