@@ -29,7 +29,7 @@ example: #条件的内部名称
 一部分为 与门条件（And），一部分为 或门条件（Or）<br>
 - 与门条件（And）下的所有子条件都成立时 与门条件（And）成立<br>
 - 或门条件（Or）下只要有其中一个子成立时 或门条件（Or）成立<br>
-当 与门条件（And）和 或门条件（Or）两部分都成立时，该条件整体才成立<br>
+<br>当 与门条件（And）和 或门条件（Or）两部分都成立时，该条件整体才成立<br>
 ```yaml
 Conditions:
   And:
@@ -84,6 +84,8 @@ onShooting|无|射出箭矢时触发
 onShootAttack{type=X}|type(t)－目标实体的类型|射出的箭矢击中目标时触发
 onArrowLand|无|箭矢落地时触发
 onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
+<br>
+<br>
 
 ## 目标选择器
 用于选择目标
