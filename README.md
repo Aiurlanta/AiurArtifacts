@@ -282,7 +282,8 @@ exampleskill:
 <summary>详细信息</summary>
 
 - 检测装备栏是否拥有某物品
-**缩写** －Equipment
+**缩写**
+- Equipment
 **参数**
 - slot(s)－装备栏格子
   - mainHand－主手
@@ -312,7 +313,9 @@ type(t)|stone（石头）|方块类型
 x|0|x轴的偏移量
 y|0|y轴的偏移量
 z|0|z轴的偏移量
+<br>
 
+例子
 ```yaml
 - "Block{t=water} #检测实体是否处在水中"
 - "Block{t=grass;y=-1} #实体脚下的方块是否为草方块"
