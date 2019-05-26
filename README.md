@@ -46,41 +46,6 @@ example: #条件的内部名称
 ```
 <br>
 
-<details>
-<summary>条件类型</summary>
-
-### Health－血量
-**参数**<br>
-－health(h)－血量设定
-<br>
-
-```yaml
-- "health{h>50%} #血量大于50%"
-- "health{h<=50%} #血量小于等于50%"
-- "health{h=50%} #血量等于50%"
-- "health{h>=10} #血量大于等于10HP"
-- "health{h=5} #血量等于5HP"
-```
-<br>
-
-### EquipmentDetection－装备栏检测
-**参数**<br>
-- slot(s)－装备栏格子
-  - mainHand－主手
-  - offHand－副手
-  - helmet－头部
-  - boots－脚部
-- item(i)－物品内部名称
-  - 若名称前带有[mm]，则检测MythicMobs的物品
-<br>
-
-```yaml
-- "Equipment{s=mainhand;i=example1} #检测主手是否拥有AA物品example1"
-- "Equipment{s=offhand;i=[mm]example1} #检测副手是否拥有MM物品example1"
-```
-</details>
-<br>
-
 ### 条件是如何运作的
 一个条件分为两个部分<br>
 一部分为 与门条件（And），一部分为 或门条件（Or）<br>
@@ -275,7 +240,6 @@ minradius(min)|1|环的最小半径
 - "<技能类型>{参数} @<目标选择器>"
 - "<技能类型>{参数} @<目标选择器> -Condition{[<条件>,<条件>]}"
 - "<技能类型>{参数} @<目标选择器> -Condition{[<条件>,<条件>]} <概率>"
-#给予目标虚弱III效果10秒
 ```
 
 例子
@@ -298,8 +262,9 @@ exampleskill:
 <details>
 <summary>详细信息</summary>
 
-**参数**<br>
-－health(h)－血量设定
+- 检测血量是否在一定范围内
+**参数**
+- health(h)－血量设定
 <br>
 
 ```yaml
@@ -316,7 +281,9 @@ exampleskill:
 <details>
 <summary>详细信息</summary>
 
-**参数**<br>
+- 检测装备栏是否拥有某物品
+**缩写** －Equipment
+**参数**
 - slot(s)－装备栏格子
   - mainHand－主手
   - offHand－副手
@@ -333,9 +300,30 @@ exampleskill:
 ***
 </details>
 
+### BlockDetection－方块检测
+<details>
+<summary>详细信息</summary>
+
+**缩写** －Block
+参数|默认值|描述
+--|:--:|:--
+type(t)|stone（石头）|方块类型
+x|0|x轴的偏移量
+y|0|y轴的偏移量
+z|0|z轴的偏移量
+<br>
+
+```yaml
+- "Block{t=water} #检测实体是否处在水中"
+- "Block{t=grass;y=-1} #实体脚下的方块是否为草方块"
+```
+***
+</details>
+
 ### 条件
 <details>
 <summary>详细信息</summary>
+
 ***
 </details>
 
@@ -345,7 +333,7 @@ exampleskill:
 <details>
 <summary>详细信息</summary>
 
-* 召唤雷电至目标位置并造成一定伤害
+- 召唤雷电至目标位置并造成一定伤害
 <br>
 
 参数（缩写）|默认值|描述
@@ -365,7 +353,7 @@ Skills:
 <details>
 <summary>详细信息</summary>
 
-* 给予目标特定的药水效果
+- 给予目标特定的药水效果
 <br>
 
 参数（缩写）|默认值|描述
