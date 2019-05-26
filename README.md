@@ -2,6 +2,48 @@
 ## 插件简介
 > 一款可自定义物品的Minecraft插件
 ***
+## 技能
+一个完整的技能应包含
+- 条件（Conditions）
+- 触发器（Trigger）
+- 目标选择器（TargetSelector）
+- 触发概率（Chance）
+- 冷却时间（Cooldown）
+- 消耗的灵力（Mana）
+- 技能组（Skills）
+<br>
+
+#### 条件
+一个技能允许同事判断多个条件
+```yaml
+Conditions:
+- "xxx1"
+- "xxx2"
+#xx1，xxx2为条件的内部名称
+#当xxx1，xxx2同时满足时才能触发技能
+```
+#### 触发器
+用于指定技能在何时触发
+触发器|缩写|描述
+--|:--:|--:
+@Self| |将技能释放者自身作为目标
+#### 目标选择器
+#### 技能组
+
+例子
+```yaml
+exampleskill:
+  Conditions:
+  - "xxx1"
+  Trigger: "onDamaged"
+  TargetSelector: "Self"
+  Mana: 10
+  Cooldown: 10
+  Chance: 0.5
+  Skills:
+  - "lightning{d=3}"
+```
+***
 ## 技能列表
 ### Linghtning－雷电
 * 召唤雷电至目标位置并造成一定伤害
