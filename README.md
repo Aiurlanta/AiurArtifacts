@@ -76,15 +76,16 @@ example: #条件的内部名称
 - slot(s)－装备栏格子
   - mainHand－主手
   - offHand－副手
+  - helmet－头部
+  - boots－脚部
 - item(i)－物品内部名称
+  - 若名称前带有[mm]，则检测MythicMobs的物品
 <br>
 
 ```yaml
-- "Equipment{s=mainhand;i=example1} #检测主手是否拥有物品example1"
+- "Equipment{s=mainhand;i=example1} #检测主手是否拥有AA物品example1"
+- "Equipment{s=offhand;i=[mm]example1} #检测副手是否拥有MM物品example1"
 ```
-
-<br>
-
 </details>
 <br>
 
