@@ -134,7 +134,7 @@ wither|凋零效果造成的伤害
 --|:--
 all|所有实体类型
 animals|动物类型
-livingentity|有生命的实体
+livingentity|生物
 monster|怪物类型（恶魂，史莱姆除外）
 players|玩家类型
 projectiles|抛射物（箭，鸡蛋，喷溅药水等）
@@ -227,7 +227,7 @@ Trigger: "onAttack{type=[zombie,husk,skeleton,wither]}"
 同时，你还可以整体剔除某种类型，只需要在前面加[!]即可<br>
 ```yaml
 Trigger: "onAttack{type=[livingentity,[!]zombie,[!]skeleton]}"
-#当释放者攻击除僵尸和骷髅以外的所有的有生命实体时触发
+#当释放者攻击除僵尸和骷髅以外的所有生物时触发
 ```
 
 <br>
@@ -255,7 +255,7 @@ Skills:
 --|:--:|:--
 @Self| |将技能释放者自身作为目标
 @NearestEntity||将最近的实体作为目标
-@NearestLivingEntity|@NLE|将最近的有生命的实体作为目标
+@NearestLivingEntity|@NLE|将最近的生物作为目标
 @NearestPlayer||将最近的玩家作为目标
 @Mount||将骑乘的生物作为目标
 <br>
@@ -264,8 +264,33 @@ Skills:
 
 目标选择器|缩写|描述
 --|:--:|:--
-@Self| |将技能释放者自身作为目标
+EntitiesInRadius{r=X}|@EIR{r=X}|将半径内的所有实体作为目标
+@LivingEntitiesInRadius{r=X}|@LEIR{r=X}|将半径内的生物作为目标
+MobsInRadius{r=X}|@MIR{r=X}|将半径内的生物作为目标
+PlayersInRadius{r=X}|@PIR{r=X}|将半径内的玩家作为目标
+PlayersInRing{min=X;max=X}||将环内的所有玩家作为目标
+PlayersInWorld|@World|将当前世界所有玩家作为目标
+PlayersOnServer|@Server|将服务器内的所有玩家作为目标
+<br>
 
+- 单坐标目标
+
+目标选择器|缩写|描述
+--|:--:|:--
+@SelfLocation| |将自己的坐标作为目标
+@Location{world(w)=X;x=X;y=X;z=X}| |指定坐标作为目标
+<br>
+
+- 多坐标目标<br>
+**@RandomLocationsInRing**<br>
+获取环内随机数量坐标作为目标
+参数|默认值|描述
+--|:--:|:--
+amount(a)|1|获取坐标个数
+maxradius(max)|3|环的最大半径
+minradius(min)|1|环的最小半径
+<br>
+<br>
 
 ## 子技能
 
