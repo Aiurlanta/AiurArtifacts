@@ -73,7 +73,7 @@ Conditions:
 用于指定技能在何时触发
 <br>
 
-触发器|何时触发
+触发器|参数|何时触发
 --|:--:|:--
 onDamagedByEntity{type=X}|type(t)-实体类型|被实体攻击时触发
 onDamagedByOther{type=X}|type(t)-伤害类型|其他伤害因素（如摔落,爆炸）
