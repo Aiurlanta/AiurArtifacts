@@ -312,7 +312,6 @@ type(t)|stone（石头）|方块类型
 x|0|x轴的偏移量
 y|0|y轴的偏移量
 z|0|z轴的偏移量
-<br>
 
 ```yaml
 - "Block{t=water} #检测实体是否处在水中"
