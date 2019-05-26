@@ -289,6 +289,9 @@ exampleskill:
 ***
 # 技能列表
 ### Linghtning－雷电
+<details>
+<summary>多实体类型</summary>
+
 * 召唤雷电至目标位置并造成一定伤害
 <br>
 
@@ -302,8 +305,12 @@ damage（d）|3|雷电造成的伤害|
 Skills:
 - "lightning{d=3}"
 ```
+</details>
 ***
 ### Potion－药水
+<details>
+<summary>多实体类型</summary>
+
 * 给予目标特定的药水效果
 <br>
 
@@ -320,6 +327,7 @@ Skills:
 - "potion{t=weakness;d=200;l=3}"
 #给予目标虚弱III效果10秒
 ```
+</details>
 <br>
 
 ***
