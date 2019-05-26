@@ -287,7 +287,7 @@ health(h)|血量设定
 
 > **缩写** - Equipment<br>
 
-参数|描述|
+参数|描述|附加
 --|:--|:--:
 slot(s)|装备栏格子类型|mainHand－主手<br>offHand－副手<br>helmet－头部<br>boots－脚部
 item(i)|物品内部名称|若名称前带有[mm]则检测MythicMobs的物品
