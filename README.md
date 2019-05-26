@@ -325,7 +325,6 @@ Skills:
 ***
 
 # 附录
-
 <details>
 <summary>伤害因素类型</summary>
 
@@ -431,4 +430,15 @@ Wolf
 Zombie|僵尸
 ZombieHorse
 ZombieVillager
+</details>
+<br>
+
+<details>
+<summary>多实体类型</summary>
+
+<br>
+
+药水类型|药水ID|描述
+--|:--:|:--
+Slow|1|缓慢
 </details>
