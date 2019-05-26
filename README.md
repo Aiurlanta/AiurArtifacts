@@ -264,8 +264,9 @@ exampleskill:
 
 - 检测血量是否在一定范围内
 
-**参数**
-- health(h)－血量设定
+参数|描述
+--|:--
+health(h)|血量设定
 <br>
 
 ```yaml
@@ -286,19 +287,10 @@ exampleskill:
 
 > **缩写** - Equipment<br>
 
-参数|描述
---|:--
-slot(s)|装备栏格子类型<br>mainHand－主手<br>offHand－副手<br>helmet－头部<br>boots－脚部
-item(i)|物品内部名称<br>若名称前带有[mm]则检测MythicMobs的物品
-
-**参数**
-- slot(s)－装备栏格子
-  - mainHand－主手
-  - offHand－副手
-  - helmet－头部
-  - boots－脚部
-- item(i)－物品内部名称
-  - 若名称前带有[mm]，则检测MythicMobs的物品
+参数|描述|
+--|:--|:--:
+slot(s)|装备栏格子类型|mainHand－主手<br>offHand－副手<br>helmet－头部<br>boots－脚部
+item(i)|物品内部名称|若名称前带有[mm]则检测MythicMobs的物品
 <br>
 
 ```yaml
