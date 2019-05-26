@@ -308,7 +308,8 @@ exampleskill:
 <details>
 <summary>详细信息</summary>
 
-**缩写** －Block
+**缩写**
+- Block
 
 参数|默认值|描述
 --|:--:|:--
