@@ -263,6 +263,7 @@ exampleskill:
 <summary>详细信息</summary>
 
 - 检测血量是否在一定范围内
+
 **参数**
 - health(h)－血量设定
 <br>
@@ -282,8 +283,10 @@ exampleskill:
 <summary>详细信息</summary>
 
 - 检测装备栏是否拥有某物品
+
 **缩写**
 - Equipment
+
 **参数**
 - slot(s)－装备栏格子
   - mainHand－主手
