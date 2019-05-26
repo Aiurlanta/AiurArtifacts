@@ -30,18 +30,30 @@ example: #条件的内部名称
 <details>
 <summary>条件类型</summary>
 
-<br>
-
-### Health{h}－血量
-**参数**
-－health(h)<br>
-若血量在设定范围内
-
-
+### Health－血量
+**参数**<br>
+－health(h)－血量设定
 <br>
 
 ```yaml
-- "health{h>50%}"
+- "health{h>50%} #血量大于50%"
+- "health{h<=50%} #血量小于等于50%"
+- "health{h=50%} #血量等于50%"
+- "health{h>=10} #血量大于等于10HP"
+- "health{h=5} #血量等于5HP"
+```
+<br>
+
+### EquipmentDetection－装备栏检测
+**参数**<br>
+－slot(s)－装备栏格子
+- - mainHand－主手
+- - offHand－副手
+- item(i)－物品内部名称
+<br>
+
+```yaml
+- "Equipment{s=mainhand;i=example1} #检测主手是否拥有物品example1"
 ```
 
 <br>
