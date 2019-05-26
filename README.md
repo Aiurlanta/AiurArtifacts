@@ -46,9 +46,9 @@ example: #条件的内部名称
 
 ### EquipmentDetection－装备栏检测
 **参数**<br>
-－slot(s)－装备栏格子
-- - mainHand－主手
-- - offHand－副手
+- slot(s)－装备栏格子
+  - mainHand－主手
+  - offHand－副手
 - item(i)－物品内部名称
 <br>
 
