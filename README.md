@@ -9,7 +9,7 @@
 - 触发概率（Chance）
 - 冷却时间（Cooldown）
 - 消耗的灵力（Mana）
-- 技能组（Skills）
+- 子技能（Skills）
 <br>
 
 ## 条件
@@ -33,7 +33,7 @@ example: #条件的内部名称
 或门条件下只要有其中一个子成立时 或门条件成立<br>
 当 与门条件 和 或门条件 两部分都成立时，该条件整体便成立<br>
 ```yaml
-Conditions:
+example1:
   And:
   - "BlockDetection{type=water}"
   Or:
@@ -44,9 +44,8 @@ Conditions:
 ```
 <br>
 值得注意的是，当 与门条件 或者 或门条件 为空时，默认它成立<br>
-
 ```yaml
-Conditions:
+example1:
   And:
   - "health{h<=70%}"
   - "health{h>=40%}"
@@ -56,7 +55,7 @@ Conditions:
 <br>
 
 ```yaml
-Conditions:
+example1:
   Or:
   - "health{h>70%}"
   - "health{h<40%}"
@@ -65,17 +64,16 @@ Conditions:
 ```
 
 #### 条件的对立
-在子条件前添加 [!] 即可取其对立
+在子条件前添加 [!] 即可取其对立<br>
 ```yaml
-Conditions:
+example1:
   And:
   - "[!]health{h>=70%}"
 #当技能释放者血量<70%时条件成立
 ```
 
 <br>
-条件配置好后可在技能配置内使用它
-
+条件配置好后即可在技能配置内使用它<br>
 ```yaml
 #技能配置
 Conditions:
@@ -90,7 +88,7 @@ Conditions:
 <br>
 
 ## 触发器
-用于指定技能在何时触发
+触发器决定了技能在何时触发
 <br>
 
 触发器|参数|何时触发
@@ -103,6 +101,32 @@ onShootAttack{type=X}|type(t)－目标实体的类型|射出的箭矢击中目�
 onArrowLand|无|箭矢落地时触发
 onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
 <br>
+
+**详细说明**<br>
+```yaml
+Trigger: "onDamaged{type=falling}"
+#当释放者摔落时触发技能
+
+Trigger: "onDamaged{type=void}"
+#当释放者掉入虚空时触发
+```
+当然，type是支持多个多个参数的<br>
+等号后面的参数需要使用中括号[]括起来<br>
+并且参数之间需要用英文逗号(,)隔开<br>
+```yaml
+Trigger: "onDamaged{type=[falling,void]}"
+#当释放者摔落或掉入虚空时触发
+
+Trigger: "onAttack{type=zombie,husk,skeleton,wither}"
+#当释放者攻击的实体类型为
+#僵尸，尸壳，骷髅，凋灵时触发
+```
+同时，你还可以剔除某种类型，只需要在前面加[!]即可<br>
+```yaml
+Trigger: "onAttack{type=all,[!]zombie,[!]skeleton}"
+#当释放者攻击除僵尸和骷髅以外的所有实体时触发
+```
+
 <br>
 
 ## 目标选择器
@@ -126,9 +150,9 @@ Skills:
 
 目标选择器|缩写|描述
 --|:--:|:--
-Self| |将技能释放者自身作为目标
+@Self| |将技能释放者自身作为目标
 
-## 技能组
+## 子技能
 
 例子
 ```yaml
