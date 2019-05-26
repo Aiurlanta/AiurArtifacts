@@ -281,10 +281,10 @@ PlayersOnServer|@Server|将服务器内的所有玩家作为目标
 @Location{world(w)=X;x=X;y=X;z=X}| |指定坐标作为目标
 <br>
 
-- 多坐标目标<br>
+- 多坐标目标
+
 **@RandomLocationsInRing**<br>
 获取环内随机数量坐标作为目标
-<br>
 
 参数|默认值|描述
 --|:--:|:--
