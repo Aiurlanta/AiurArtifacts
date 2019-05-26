@@ -434,7 +434,7 @@ ZombieVillager
 <br>
 
 <details>
-<summary>多实体类型</summary>
+<summary>药水类型</summary>
 
 <br>
 
