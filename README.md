@@ -347,8 +347,9 @@ void|掉入虚空时受到的伤害
 wither|凋零效果造成的伤害
 </details>
 <br>
+
 <details>
-<summary>实体类型</summary>
+<summary>多实体类型</summary>
 
 <br>
 
@@ -360,6 +361,12 @@ livingentity|生物
 monster|怪物类型（恶魂，史莱姆除外）
 players|玩家类型
 projectiles|抛射物（箭，鸡蛋，喷溅药水等）
+</details>
+<br>
+
+<details>
+<summary>实体类型</summary>
+
 <br>
 
 实体类型|描述
