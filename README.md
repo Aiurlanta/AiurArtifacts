@@ -106,9 +106,22 @@ onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
 <details>
 <summary>伤害因素类型</summary>
 
+<br>
+
 类型|描述
 --|:--
+entity_attack|实体攻击造成的伤害
+fall|摔落造成的伤害
+fire|直接接触火焰造成的伤害
+fire_tick|身上火焰效果造成的伤害
+lava|岩浆造成的伤害
+lightning|雷电造成的伤害
+magic|魔法造成的伤害（药水等）
+projectile|抛射物造成的伤害
+suicide|自杀造成的伤害
+thorns|荆棘造成的伤害
 void|掉入虚空时受到的伤害
+wither|凋零效果造成的伤害
 </details>
 <br>
 <details>
@@ -121,7 +134,7 @@ void|掉入虚空时受到的伤害
 animals|动物类型
 monster|怪物类型（恶魂，史莱姆除外）
 players|玩家类型
-projectile|抛射物（箭，鸡蛋，喷溅药水等）
+projectiles|抛射物（箭，鸡蛋，喷溅药水等）
 <br>
 
 实体类型|描述
