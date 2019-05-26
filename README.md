@@ -81,7 +81,7 @@ onDamagedByEntity{type=X}|type(t)－实体类型|被实体攻击时触发
 onDamagedByOther{type=X}|type(t)－伤害类型|其他伤害因素（如摔落,爆炸）
 onAttack{type=X}|type(t)－目标实体的类型|近战攻击时触发
 onShooting|无|射出箭矢时触发
-onShootAttack|无|射出的箭矢击中目标时触发
+onShootAttack{type=X}|type(t)－目标实体的类型|射出的箭矢击中目标时触发
 onArrowLand|无|箭矢落地时触发
 onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
 
