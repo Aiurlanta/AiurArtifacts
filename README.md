@@ -26,22 +26,7 @@ AiurArtifacts（AA）插件是一款可自定义物品的插件<br>
 - 粒子特效
 - [技能](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)
 
-***
-
-# 技能
-技能是AiurArtifacts插件的一大特点<br>
-可以使玩家在不同的情况之中释放不同的技能<br>
-一个完整的技能由以下几个部分构成
-- 条件（Conditions）
-- 触发器（Trigger）
-- 目标选择器（TargetSelector）
-- 触发概率（Chance）
-- 冷却时间（Cooldown）
-- 消耗的灵力（Mana）
-- 子技能（Skills）
-<br>
-
-## 条件
+# 条件
 条件用于判断是否处于某种情况<br>
 条件的配置位于./pluhins/AiurArtifacts/Conditions/文件夹内<br>
 条件配置格式<br>
@@ -131,7 +116,7 @@ example1:
 #当技能释放者血量>70%或者<40%时条件成立
 ```
 
-#### 条件的对立
+### 条件的对立
 在子条件前添加 [!] 即可取其对立<br>
 ```yaml
 example1:
@@ -153,6 +138,21 @@ Conditions:
 <br>
 当然，你也可以不使用条件，将其留空即可
 <br>
+<br>
+
+***
+
+# 技能
+技能是AiurArtifacts插件的一大特点<br>
+可以使玩家在不同的情况之中释放不同的技能<br>
+一个完整的技能由以下几个部分构成
+- 条件（Conditions）
+- 触发器（Trigger）
+- 目标选择器（TargetSelector）
+- 触发概率（Chance）
+- 冷却时间（Cooldown）
+- 消耗的灵力（Mana）
+- 子技能（Skills）
 <br>
 
 ## 触发器
