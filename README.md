@@ -7,7 +7,12 @@
 [技能](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)<br>
 &#8195;[触发器]()<br>
 &#8195;[目标选择器]()<br>
-&#8195;[子技能]()
+&#8195;[子技能]()<br>
+条件列表
+特效列表
+技能列表
+&#8195;Lightning－雷电
+&#8195;Potion－药水
 <br>
 
 # 插件简介
