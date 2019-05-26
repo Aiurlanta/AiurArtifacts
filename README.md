@@ -68,6 +68,8 @@ Conditions:
 当技能Conditions下的所有条件都成立时才执行技能<br>
 <br>
 当然，你也可以不使用条件，将其留空即可
+<br>
+<br>
 
 ## 触发器
 用于指定技能在何时触发
@@ -75,13 +77,13 @@ Conditions:
 
 触发器|参数|何时触发
 --|:--:|:--
-onDamagedByEntity{type=X}|type(t)-实体类型|被实体攻击时触发
-onDamagedByOther{type=X}|type(t)-伤害类型|其他伤害因素（如摔落,爆炸）
-onAttack{type=X}|type(t)-目标实体的类型|近战攻击时触发
-onShooting| |射出箭矢时触发
-onShootAttack| |射出的箭矢击中目标时触发
-onArrowLand| |箭矢落地时触发
-onKillEntity{type=X}|type(t)-死亡实体的类型|杀死实体时触发
+onDamagedByEntity{type=X}|type(t)－实体类型|被实体攻击时触发
+onDamagedByOther{type=X}|type(t)－伤害类型|其他伤害因素（如摔落,爆炸）
+onAttack{type=X}|type(t)－目标实体的类型|近战攻击时触发
+onShooting|无|射出箭矢时触发
+onShootAttack|无|射出的箭矢击中目标时触发
+onArrowLand|无|箭矢落地时触发
+onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
 
 ## 目标选择器
 用于选择目标
