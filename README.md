@@ -187,7 +187,7 @@ Zombie|僵尸
 ZombieHorse
 ZombieVillager
 </details>
-
+<br>
 
 **详细说明**<br>
 ```yaml
