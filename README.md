@@ -316,7 +316,6 @@ y|0|y轴的偏移量
 z|0|z轴的偏移量
 <br>
 
-例子
 ```yaml
 - "Block{t=water} #检测实体是否处在水中"
 - "Block{t=grass;y=-1} #实体脚下的方块是否为草方块"
@@ -344,7 +343,6 @@ z|0|z轴的偏移量
 damage（d）|3|雷电造成的伤害|
 <br>
 
-例子
 ```yaml
 Skills:
 - "lightning{d=3}"
@@ -365,7 +363,6 @@ duration（d）|100|持续时间（单位:tick）
 level（l）|1|药水等级
 <br>
 
-例子
 ```yaml
 Skills:
 - "potion{t=weakness;d=200;l=3}"
