@@ -95,21 +95,6 @@ example1:
 #当技能释放者血量<70%时条件成立
 ```
 
-<br>
-条件配置好后即可在技能配置内使用它<br>
-```yaml
-#技能配置
-Conditions:
-- "example1"
-- "example2"
-#example1,example2为条件的内部名称
-```
-当技能Conditions下的所有条件都成立时才执行技能<br>
-<br>
-当然，你也可以不使用条件，将其留空即可
-<br>
-<br>
-
 ***
 
 # 技能
@@ -123,6 +108,19 @@ Conditions:
 - 冷却时间（Cooldown）
 - 消耗的灵力（Mana）
 - 子技能（Skills）
+<br>
+
+## 条件
+在技能中灵活运用条件，会使技能更具特色<br>
+在Conditions下填入条件的内部名称即可
+```yaml
+Conditions:
+- "example1"
+- "example2"
+#example1,example2为条件的内部名称
+```
+当技能Conditions下拥有多个条件时，必须要按顺序满足所有条件才能执行技能<br>
+若不想使用条件可将其留空
 <br>
 
 ## 触发器
