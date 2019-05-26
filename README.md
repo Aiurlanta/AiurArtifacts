@@ -38,6 +38,7 @@ Conditions:
 #当技能释放者血量在40%-70%之间时条件成立
 ```
 <br>
+
 ```yaml
 Conditions:
   Or:
