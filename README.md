@@ -73,10 +73,24 @@ Conditions:
 用于指定技能在何时触发
 <br>
 
-触发器|缩写|描述
+触发器|何时触发
+--|:--:|:--
+onDamagedByEntity{type=X}|type(t)-实体类型|被实体攻击时触发
+onDamagedByOther{type=X}|type(t)-伤害类型|其他伤害因素（如摔落,爆炸）
+onAttack{type=X}|type(t)-目标实体的类型|近战攻击时触发
+onShooting| |射出箭矢时触发
+onShootAttack| |射出的箭矢击中目标时触发
+onArrowLand| |箭矢落地时触发
+onKillEntity{type=X}|type(t)-死亡实体的类型|杀死实体时触发
+
+## 目标选择器
+用于选择目标
+<br>
+
+目标选择器|缩写|描述
 --|:--:|:--
 Self| |将技能释放者自身作为目标
-## 目标选择器
+
 ## 技能组
 
 例子
