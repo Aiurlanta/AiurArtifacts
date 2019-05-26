@@ -132,7 +132,9 @@ wither|凋零效果造成的伤害
 
 多实体类型|描述
 --|:--
+all|所有实体类型
 animals|动物类型
+livingentity|有生命的实体
 monster|怪物类型（恶魂，史莱姆除外）
 players|玩家类型
 projectiles|抛射物（箭，鸡蛋，喷溅药水等）
@@ -224,8 +226,8 @@ Trigger: "onAttack{type=[zombie,husk,skeleton,wither]}"
 ```
 同时，你还可以整体剔除某种类型，只需要在前面加[!]即可<br>
 ```yaml
-Trigger: "onAttack{type=[all,[!]zombie,[!]skeleton]}"
-#当释放者攻击除僵尸和骷髅以外的所有实体时触发
+Trigger: "onAttack{type=[livingentity,[!]zombie,[!]skeleton]}"
+#当释放者攻击除僵尸和骷髅以外的所有的有生命实体时触发
 ```
 
 <br>
@@ -247,11 +249,23 @@ Skills:
 - "lightning{d=1} @PIR{r=5}" #使用子目标@PIR
 - "potion{t=slow;d=200;l=1}" #使用父目标@Self
 ```
-<br>
+- 单生物目标
 
 目标选择器|缩写|描述
 --|:--:|:--
 @Self| |将技能释放者自身作为目标
+@NearestEntity||将最近的实体作为目标
+@NearestLivingEntity|@NLE|将最近的有生命的实体作为目标
+@NearestPlayer||将最近的玩家作为目标
+@Mount||将骑乘的生物作为目标
+<br>
+
+- 多生物目标
+
+目标选择器|缩写|描述
+--|:--:|:--
+@Self| |将技能释放者自身作为目标
+
 
 ## 子技能
 
