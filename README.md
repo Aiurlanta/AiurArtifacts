@@ -102,6 +102,15 @@ onArrowLand|无|箭矢落地时触发
 onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
 <br>
 
+<details>
+<summary>伤害因素类型</summary>
+
+类型|描述
+--|:--
+void|掉入虚空时受到的伤害
+
+</details>
+
 **详细说明**<br>
 ```yaml
 Trigger: "onDamagedByOther{type=falling}"
