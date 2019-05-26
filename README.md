@@ -292,6 +292,54 @@ exampleskill:
   - "lightning{d=3}"
 ```
 ***
+
+# 条件列表
+### Health－血量条件
+<details>
+<summary>详细信息</summary>
+
+**参数**<br>
+－health(h)－血量设定
+<br>
+
+```yaml
+- "health{h>50%} #血量大于50%"
+- "health{h<=50%} #血量小于等于50%"
+- "health{h=50%} #血量等于50%"
+- "health{h>=10} #血量大于等于10HP"
+- "health{h=5} #血量等于5HP"
+```
+***
+</details>
+
+### EquipmentDetection－装备栏检测
+<details>
+<summary>详细信息</summary>
+
+**参数**<br>
+- slot(s)－装备栏格子
+  - mainHand－主手
+  - offHand－副手
+  - helmet－头部
+  - boots－脚部
+- item(i)－物品内部名称
+  - 若名称前带有[mm]，则检测MythicMobs的物品
+<br>
+
+```yaml
+- "Equipment{s=mainhand;i=example1} #检测主手是否拥有AA物品example1"
+- "Equipment{s=offhand;i=[mm]example1} #检测副手是否拥有MM物品example1"
+```
+***
+</details>
+
+### 条件
+<details>
+<summary>详细信息</summary>
+***
+</details>
+
+***
 # 技能列表
 ### Linghtning－雷电
 <details>
