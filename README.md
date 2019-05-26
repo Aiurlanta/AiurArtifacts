@@ -161,9 +161,9 @@ Conditions:
 
 触发器|参数|何时触发
 --|:--:|:--
-onDamagedByEntity{type=X}|type(t)－实体类型|被实体攻击时触发
+onDamagedByEntity{type=X}|type(t)－[实体类型](https://github.com/Aiurlanta/AiurArtifacts#%E9%99%84%E5%BD%95)|被实体攻击时触发
 onDamagedByProjectile{pt=X;st=X}|ProjectileType(pt)－抛射物类型<br>ShooterType(st)－射击者类型|被抛射物击中时触发
-onDamagedByOther{type=X}|type(t)－伤害类型|其他伤害因素（如摔落,爆炸）
+onDamagedByOther{type=X}|type(t)－[伤害类型](https://github.com/Aiurlanta/AiurArtifacts#%E9%99%84%E5%BD%95)|其他伤害因素（如摔落,爆炸）
 onAttack{type=X}|type(t)－目标实体的类型|近战攻击时触发
 onShooting|无|射出箭矢时触发
 onShootAttack{type=X}|type(t)－目标实体的类型|射出的箭矢击中目标时触发
@@ -309,7 +309,7 @@ Skills:
 
 参数（缩写）|默认值|描述
 --|:--:|:--
-type（t）|slow|药水效果类型
+type（t）|slow|[药水类型](https://github.com/Aiurlanta/AiurArtifacts#%E9%99%84%E5%BD%95)
 duration（d）|100|持续时间（单位:tick）
 level（l）|1|药水等级
 <br>
