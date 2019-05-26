@@ -305,6 +305,7 @@ exampleskill:
 <summary>详细信息</summary>
 
 **缩写** －Block
+
 参数|默认值|描述
 --|:--:|:--
 type(t)|stone（石头）|方块类型
