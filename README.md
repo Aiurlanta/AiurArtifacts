@@ -1,8 +1,13 @@
 # 概览
+[插件介绍]()<br>
+[配置文件config.yml]()<br>
+[命令＆限权]()<br>
+[条件]()<br>
+[特效]()<br>
 [技能](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)<br>
-&#8195;[条件](https://github.com/Aiurlanta/AiurArtifacts#%E6%9D%A1%E4%BB%B6)<br>
 &#8195;[触发器]()<br>
-&#8195;[目标选择器]()
+&#8195;[目标选择器]()<br>
+&#8195;[子技能]()
 <br>
 
 # 插件简介
