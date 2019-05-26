@@ -104,26 +104,26 @@ onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
 
 **详细说明**<br>
 ```yaml
-Trigger: "onDamaged{type=falling}"
+Trigger: "onDamagedByOther{type=falling}"
 #当释放者摔落时触发技能
 
-Trigger: "onDamaged{type=void}"
+Trigger: "onDamagedByOther{type=void}"
 #当释放者掉入虚空时触发
 ```
 当然，type是支持多个多个参数的<br>
-等号后面的参数需要使用中括号[]括起来<br>
+填入多种参数时等号后面的参数需要使用中括号[]括起来<br>
 并且参数之间需要用英文逗号(,)隔开<br>
 ```yaml
-Trigger: "onDamaged{type=[falling,void]}"
+Trigger: "onDamagedByOther{type=[falling,void]}"
 #当释放者摔落或掉入虚空时触发
 
-Trigger: "onAttack{type=zombie,husk,skeleton,wither}"
+Trigger: "onAttack{type=[zombie,husk,skeleton,wither]}"
 #当释放者攻击的实体类型为
 #僵尸，尸壳，骷髅，凋灵时触发
 ```
-同时，你还可以剔除某种类型，只需要在前面加[!]即可<br>
+同时，你还可以整体剔除某种类型，只需要在前面加[!]即可<br>
 ```yaml
-Trigger: "onAttack{type=all,[!]zombie,[!]skeleton}"
+Trigger: "onAttack{type=[all,[!]zombie,[!]skeleton]}"
 #当释放者攻击除僵尸和骷髅以外的所有实体时触发
 ```
 
