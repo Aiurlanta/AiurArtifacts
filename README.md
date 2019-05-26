@@ -284,8 +284,7 @@ exampleskill:
 
 - 检测装备栏是否拥有某物品
 
-**缩写**
-- Equipment
+> **缩写** - Equipment<br>
 
 **参数**
 - slot(s)－装备栏格子
@@ -308,8 +307,7 @@ exampleskill:
 <details>
 <summary>详细信息</summary>
 
-**缩写**
-- Block
+> **缩写** - Block<br>
 
 参数|默认值|描述
 --|:--:|:--
