@@ -204,7 +204,7 @@ ZombieVillager
 
 **详细说明**<br>
 ```yaml
-Trigger: "onDamagedByOther{type=falling}"
+Trigger: "onDamagedByOther{type=fall}"
 #当释放者摔落时触发技能
 
 Trigger: "onDamagedByOther{type=void}"
@@ -214,7 +214,7 @@ Trigger: "onDamagedByOther{type=void}"
 填入多种参数时等号后面的参数需要使用中括号[]括起来<br>
 并且参数之间需要用英文逗号(,)隔开<br>
 ```yaml
-Trigger: "onDamagedByOther{type=[falling,void]}"
+Trigger: "onDamagedByOther{type=[fall,void]}"
 #当释放者摔落或掉入虚空时触发
 
 Trigger: "onAttack{type=[zombie,husk,skeleton,wither]}"
