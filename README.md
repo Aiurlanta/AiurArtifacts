@@ -306,10 +306,11 @@ Skills:
 - "lightning{d=3}"
 ```
 </details>
+
 ***
+
 ### Potion－药水
 <details>
-<summary>多实体类型</summary>
 
 * 给予目标特定的药水效果
 <br>
