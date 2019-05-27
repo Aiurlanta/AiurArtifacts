@@ -8,6 +8,7 @@
 &#8195;[触发器]()<br>
 &#8195;[目标选择器]()<br>
 &#8195;[子技能]()<br>
+[神器(Artifact)]()<br>
 [条件列表]()<br>
 [特效列表]()<br>
 [技能列表]()<br>
@@ -255,6 +256,39 @@ exampleskill:
   - "<技能类型>{参数}"
   - "<技能类型>{参数}"
 ```
+***
+
+# 神器(Artifact)
+在AiurArtifacts里要制作一件神器并不难，不像特效和技能那样那么复杂<br>
+```yaml
+example_name:
+  Id:
+  Material:
+  Data:
+  Amount:
+  Display:
+  Lore:
+  Enchantments:
+  Meta:
+  Attributes:
+  Effects:
+  Skills:
+  Options:
+```
+我们将其中的选项一个个单独拿出来看
+#### example_name
+神器的内部名称，用来区分不同的神器<br>
+每一个神器都有一个内部名称<br>
+可以根据神器的内部名称来获得神器<br>
+内部名称可以随便取，但切记不要跟其他神器的内部名称重复!<br>
+
+#### Id ＆ Material
+设置神器的物品种类
+可以根据物品id或者材料名称来设置物品
+Id - 填入物品id来设置物品
+Material - 填入 Bukkit 材料名称来设置物品
+仅需选择Id或Material 设置物品 即可
+
 ***
 
 # 条件列表
