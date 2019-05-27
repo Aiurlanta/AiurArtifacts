@@ -268,11 +268,11 @@ health(h)|血量设定
 <br>
 
 ```yaml
-- "health{h>50%} #血量大于50%"
-- "health{h<=50%} #血量小于等于50%"
-- "health{h=50%} #血量等于50%"
-- "health{h>=10} #血量大于等于10HP"
-- "health{h=5} #血量等于5HP"
+- "health{h>50%}" #血量大于50%
+- "health{h<=50%}" #血量小于等于50%
+- "health{h=50%}" #血量等于50%
+- "health{h>=10}" #血量大于等于10HP
+- "health{h=5}" #血量等于5HP
 ```
 ***
 </details>
@@ -292,8 +292,8 @@ item(i)|物品内部名称|若名称前带有[mm]<br>则检测MythicMobs的物�
 <br>
 
 ```yaml
-- "Equipment{s=mainhand;i=example1} #检测主手是否拥有AA物品example1"
-- "Equipment{s=offhand;i=[mm]example1} #检测副手是否拥有MM物品example1"
+- "Equipment{s=mainhand;i=example1}" #检测主手是否拥有AA物品example1
+- "Equipment{s=offhand;i=[mm]example1}" #检测副手是否拥有MM物品example1
 ```
 ***
 </details>
@@ -315,8 +315,8 @@ z|0|z轴的偏移量
 <br>
 
 ```yaml
-- "Block{t=water} #检测实体是否处在水中"
-- "Block{t=grass;y=-1} #实体脚下的方块是否为草方块"
+- "Block{t=water}" #检测实体是否处在水中
+- "Block{t=grass;y=-1}" #实体脚下的方块是否为草方块
 ```
 ***
 </details>
