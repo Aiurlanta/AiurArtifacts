@@ -276,18 +276,59 @@ example_name:
   Options:
 ```
 我们将其中的选项一个个单独拿出来看
-- **example_name**
+- **example_name**<br>
 神器的内部名称，用来区分不同的神器<br>
 每一个神器都有一个内部名称<br>
 可以根据神器的内部名称来获得神器<br>
 内部名称可以随便取，但切记不要跟其他神器的内部名称重复!<br>
 
-- **Id ＆ Material**
-设置神器的物品种类
+- **Id ＆ Material**<br>
+设置物品种类
 可以根据物品id或者材料名称来设置物品
 Id - 填入物品id来设置物品
 Material - 填入 Bukkit 材料名称来设置物品
-仅需选择Id或Material 设置物品 即可
+选择Id或Material设置物品即可
+
+- **Data**<br>
+设置物品的副Id
+用于物品的耐久和方块种类
+
+- **Amount**<br>
+设置物品的数量
+
+- **Display**<br>
+设置物品的展示名
+
+- **Lore**<br>
+设置物品的lore
+
+- **Enchantments**<br>
+设置物品的附魔
+格式:
+<附魔类型>:<等级>
+
+
+- **Meta**<br>
+设置物品的附加信息
+如 头颅材质，药水类型，旗帜条纹
+详情见 [物品附加信息]()
+
+- **Effects**<br>
+设置物品的特效
+设置特效只需将特效内部名称按顺序填入即可
+
+```yaml
+Effects:
+- "example1"
+- "example2"
+```
+
+- **Skills**<br>
+设置物品的技能
+格式同Effects，参见Effects
+
+- **Options**<br>
+这是一个特殊的子选项，提供了大量的附加属性
 
 ***
 
