@@ -112,7 +112,7 @@ example1:
 
 ## 条件
 在技能中灵活运用条件，会使技能更具特色<br>
-在Conditions下填入条件的内部名称即可
+在技能中使用条件，只需在Conditions下填入条件的内部名称即可
 ```yaml
 Conditions:
 - "example1"
@@ -120,7 +120,7 @@ Conditions:
 #example1,example2为条件的内部名称
 ```
 当技能Conditions下拥有多个条件时，必须要按顺序满足所有条件才能执行技能<br>
-若不想使用条件可将其留空
+若不想在技能中使用条件，只需将Conditions留空即可
 <br>
 
 ## 触发器
@@ -137,8 +137,6 @@ onShooting|无|射出箭矢时触发
 onShootAttack{type=X}|type(t)－目标实体的类型|射出的箭矢击中目标时触发
 onArrowLand|无|箭矢落地时触发
 onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
-<br>
-
 <br>
 
 **详细说明**<br>
@@ -160,12 +158,11 @@ Trigger: "onAttack{type=[zombie,husk,skeleton,wither]}"
 #当释放者攻击的实体类型为
 #僵尸，尸壳，骷髅，凋灵时触发
 ```
-同时，你还可以整体剔除某种类型，只需要在前面加[!]即可<br>
+同时，你还可以整体剔除某种类型，只需要在前面加 ! 即可<br>
 ```yaml
-Trigger: "onAttack{type=[livingentity,[!]zombie,[!]skeleton]}"
+Trigger: "onAttack{type=[livingentity,!zombie,!skeleton]}"
 #当释放者攻击除僵尸和骷髅以外的所有生物时触发
 ```
-
 <br>
 
 ## 目标选择器
@@ -202,11 +199,11 @@ Skills:
 --|:--:|:--
 EntitiesInRadius{r=X}|@EIR{r=X}|将半径内的所有实体作为目标
 @LivingEntitiesInRadius{r=X}|@LEIR{r=X}|将半径内的生物作为目标
-MobsInRadius{r=X}|@MIR{r=X}|将半径内的生物作为目标
-PlayersInRadius{r=X}|@PIR{r=X}|将半径内的玩家作为目标
-PlayersInRing{min=X;max=X}||将环内的所有玩家作为目标
-PlayersInWorld|@World|将当前世界所有玩家作为目标
-PlayersOnServer|@Server|将服务器内的所有玩家作为目标
+@MobsInRadius{r=X}|@MIR{r=X}|将半径内的生物作为目标
+@PlayersInRadius{r=X}|@PIR{r=X}|将半径内的玩家作为目标
+@PlayersInRing{min=X;max=X}||将环内的所有玩家作为目标
+@PlayersInWorld|@World|将当前世界所有玩家作为目标
+@PlayersOnServer|@Server|将服务器内的所有玩家作为目标
 <br>
 
 - 单坐标目标
@@ -215,6 +212,7 @@ PlayersOnServer|@Server|将服务器内的所有玩家作为目标
 --|:--:|:--
 @SelfLocation| |将自己的坐标作为目标
 @Location{world(w)=X;x=X;y=X;z=X}| |指定坐标作为目标
+@RandomLocation{r=X}| |取范围内随机坐标作为目标
 <br>
 
 - 多坐标目标
@@ -228,30 +226,34 @@ amount(a)|1|获取坐标个数
 maxradius(max)|3|环的最大半径
 minradius(min)|1|环的最小半径
 <br>
-<br>
+
+**详细说明**<br>
+
 
 ## 子技能
 技能的多样性主要在于子技能的配置
-
+子技能填写格式如下
 ```yaml
 - "<技能类型>{参数}"
 - "<技能类型>{参数} @<目标选择器>"
-- "<技能类型>{参数} @<目标选择器> -Condition{[<条件>,<条件>]}"
-- "<技能类型>{参数} @<目标选择器> -Condition{[<条件>,<条件>]} <概率>"
+- "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]}"
+- "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]} <概率>"
 ```
 
 例子
 ```yaml
 exampleskill:
   Conditions:
-  - "xxx1"
-  Trigger: "onDamaged"
-  TargetSelector: "Self"
+  - "<条件内部名>"
+  - "<条件内部名>"
+  Trigger: "<触发器>"
+  TargetSelector: "@<目标选择器>"
   Mana: 10
   Cooldown: 10
   Chance: 0.5
   Skills:
-  - "lightning{d=3}"
+  - "<技能类型>{参数}"
+  - "<技能类型>{参数}"
 ```
 ***
 
