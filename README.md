@@ -119,13 +119,13 @@ exampleskill: #技能内部名称
 - 条件（Conditions）
 - 触发器（Trigger）
 - 目标选择器（TargetSelector）
-- 触发概率（Chance）
+- **触发概率（Chance）**<br>
 设置技能触发的概率<br>
 可用范围为 0～1<br>
 设置为 0.5 则为50%概率触发
-- 冷却时间（Cooldown）
+- **冷却时间（Cooldown）**<br>
 设置技能的冷却时间（单位: 秒）
-- 灵力（Mana）
+- **灵力（Mana）**<br>
 设置释放技能所需要消耗的能量值<br>
 若释放者的灵力值不足，则无法释放技能
 - 子技能（Skills）
