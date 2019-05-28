@@ -124,7 +124,7 @@ Enchantments:
 ## 物品附加信息(Meta)
 待编辑...
 
-## 神器选项(Options)
+## 物品选项(Options)
 
 ### 灵魂绑定
 待编辑...
