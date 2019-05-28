@@ -124,25 +124,40 @@ Enchantments:
 
 ## 神器选项(Options)
 
+### 灵魂绑定
+待编辑...
+<br>
+
 ### 自定义耐久
 每一个神器都可以在lore中设置自定义耐久<br>
 自定义耐久并不会影响到物品的原版耐久<br>
 ```yaml
 Options:
   Durability:
-    Formal:
-    Dura:
-    MaxDura:
+    Formal: "＆a %dura%/%maxdura%"
+    Dura: 500
+    MaxDura: 500
 ```
 - **Dura ＆ MaxDura**<br>
 设置神器的 当前耐久 和 最大耐久<br>
 当前耐久的数值不能小于零!并且不能大于最大耐久值!<br>
 
 - **Formal**<br>
-设置在lore中的展示内容
-
-
-
+设置在lore中的展示内容<br>
+如<br>
+```yaml
+Formal: "＆a %dura%/%maxdura%"
+Formal: "耐久 ＆a %dura%/%maxdura%"
+```
+其中 %dura% 和 %maxdura% 会自动替换为你所填入的数值<br>
+值得注意的是<br>
+Formal中必须含有%dura% 和 %maxdura%这两个变量<br>
+否则将影响功能的正常运行<br>
+<br>
+填好后还需要在lore中调用<br>
+否则将影响功能的正常运行<br>
+在lore中调用非常简单，只需要在其中一行lore中加入 %Durability% 即可，
+届时 %Durability% 将替换为 Formal中所设置的内容
 ```yaml
 Lore:
 - "耐久值 %Durability%"
@@ -152,7 +167,8 @@ Options:
     MaxDura: 500
     Formal: "＆a %dura%/%maxdura%"
 ```
-最终显示的是
+最终显示的是<br>
+[ 图片 ]
 
 ***
 
