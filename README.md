@@ -262,8 +262,7 @@ exampleskill:
 在AiurArtifacts里要制作一件神器并不难，不像特效和技能那样那么复杂<br>
 ```yaml
 example_name:
-  Id:
-  Material:
+  Id: 2
   Data:
   Amount:
   Display:
@@ -282,16 +281,15 @@ example_name:
 可以根据神器的内部名称来获得神器<br>
 内部名称可以随便取，但切记不要跟其他神器的内部名称重复!<br>
 
-- **Id ＆ Material**<br>
+- **Id**<br>
 设置物品种类
-可以根据物品id或者材料名称来设置物品
-Id - 填入物品id来设置物品
-Material - 填入 Bukkit 材料名称来设置物品
-选择Id或Material设置物品即可
+可以根据物品id或者材料名称来设置物品<br>
+可选择填入 物品数字id 来设置物品<br>
+也可以填入 物品英文id 来设置物品<br>
 
 - **Data**<br>
-设置物品的副Id
-用于物品的耐久和方块种类
+设置物品的副Id<br>
+用于物品的耐久和方块种类<br>
 
 - **Amount**<br>
 设置物品的数量
@@ -303,28 +301,28 @@ Material - 填入 Bukkit 材料名称来设置物品
 设置物品的lore
 
 - **Enchantments**<br>
-设置物品的附魔
-格式:
+设置物品的附魔<br>
+格式:<br>
 <附魔类型>:<等级>
 
 
 - **Meta**<br>
-设置物品的附加信息
-如 头颅材质，药水类型，旗帜条纹
-详情见 [物品附加信息]()
+设置物品的附加信息<br>
+如 头颅材质，药水类型，旗帜条纹<br>
+详情见 [物品附加信息]()<br>
 
 - **Effects**<br>
-设置物品的特效
+设置物品的特效<br>
 设置特效只需将特效内部名称按顺序填入即可
 
-```yaml
+&#8195;```yaml
 Effects:
 - "example1"
 - "example2"
 ```
 
 - **Skills**<br>
-设置物品的技能
+设置物品的技能<br>
 格式同Effects，参见Effects
 
 - **Options**<br>
