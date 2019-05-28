@@ -315,7 +315,8 @@ example_name:
 设置物品的特效<br>
 设置特效只需将特效内部名称按顺序填入即可
 
-&#8195;```yaml
+&#8195;
+```yaml
 Effects:
 - "example1"
 - "example2"
