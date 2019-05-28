@@ -101,13 +101,33 @@ example1:
 # 技能
 技能是AiurArtifacts插件的一大特点<br>
 可以使玩家在不同的情况之中释放不同的技能<br>
-一个完整的技能由以下几个部分构成
+```yaml
+exampleskill: #技能内部名称
+  Conditions:
+  - "<条件内部名>"
+  - "<条件内部名>"
+  Trigger: "<触发器>"
+  TargetSelector: "@<目标选择器>"
+  Mana: 10
+  Cooldown: 10
+  Chance: 0.5
+  Skills:
+  - "<技能类型>{参数}"
+  - "<技能类型>{参数}"
+```
+如上面例子所示，一个完整的技能由以下几个部分构成
 - 条件（Conditions）
 - 触发器（Trigger）
 - 目标选择器（TargetSelector）
 - 触发概率（Chance）
+设置技能触发的概率<br>
+可用范围为 0～1<br>
+设置为 0.5 则为50%概率触发
 - 冷却时间（Cooldown）
-- 消耗的灵力（Mana）
+设置技能的冷却时间（单位: 秒）
+- 灵力（Mana）
+设置释放技能所需要消耗的能量值<br>
+若释放者的灵力值不足，则无法释放技能
 - 子技能（Skills）
 <br>
 
@@ -241,21 +261,6 @@ minradius(min)|1|环的最小半径
 - "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]} <概率>"
 ```
 
-例子
-```yaml
-exampleskill:
-  Conditions:
-  - "<条件内部名>"
-  - "<条件内部名>"
-  Trigger: "<触发器>"
-  TargetSelector: "@<目标选择器>"
-  Mana: 10
-  Cooldown: 10
-  Chance: 0.5
-  Skills:
-  - "<技能类型>{参数}"
-  - "<技能类型>{参数}"
-```
 ***
 
 # 神器(Artifact)
