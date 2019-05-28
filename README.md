@@ -81,10 +81,10 @@ Id: "grass" #草方块
 设置物品的数量
 
 - **Display**<br>
-设置物品的展示名
+设置物品的展示名，支持颜色代码＆
 
 - **Lore**<br>
-设置物品的lore
+设置物品的lore，支持颜色代码＆
 
 - **Enchantments**<br>
 设置物品的附魔<br>
@@ -124,7 +124,7 @@ Enchantments:
 
 ## 神器选项(Options)
 
-###自定义耐久
+### 自定义耐久
 每一个神器都可以在lore中设置自定义耐久<br>
 自定义耐久并不会影响到物品的原版耐久<br>
 ```yaml
@@ -134,18 +134,25 @@ Options:
     Dura:
     MaxDura:
 ```
-- Formal<br>
-在lore中显示的格式
+- **Dura ＆ MaxDura**<br>
+设置神器的 当前耐久 和 最大耐久<br>
+当前耐久的数值不能小于零!并且不能大于最大耐久值!<br>
 
-- **Dura**<br>
-设置神器的当前耐久<br>
-数值不能小于0，也不能大于最大耐久<br>
-若最大耐久为-1，则此选项无意义
+- **Formal**<br>
+设置在lore中的展示内容
 
-- **MaxDura**<br>
-设置神器的最大耐久<br>
-若想设置神器为无限耐久<br>
-则可将其设置为-1
+
+
+```yaml
+Lore:
+- "耐久值 %Durability%"
+Options:
+  Durability:
+    Dura: 256
+    MaxDura: 500
+    Formal: "＆a %dura%/%maxdura%"
+```
+最终显示的是
 
 ***
 
