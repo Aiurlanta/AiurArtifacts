@@ -2,13 +2,13 @@
 [插件介绍]()<br>
 [配置文件config.yml]()<br>
 [命令＆限权]()<br>
-[条件]()<br>
-[特效]()<br>
-[技能](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)<br>
+[神器(Artifact)]()<br>
+[条件(Condition)]()<br>
+[特效(Effect)]()<br>
+[技能(Skill)](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)<br>
 &#8195;[触发器]()<br>
 &#8195;[目标选择器]()<br>
 &#8195;[子技能]()<br>
-[神器(Artifact)]()<br>
 [条件列表]()<br>
 [特效列表]()<br>
 [技能列表]()<br>
@@ -31,6 +31,123 @@ AiurArtifacts（AA）插件是一款可自定义物品的插件<br>
 - 自定义耐久
 - 粒子特效
 - [技能](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)
+
+***
+
+# 神器(Artifact)
+在AiurArtifacts里要制作一件神器并不难<br>
+我们先来看一下格式:
+```yaml
+example_name:
+  Id: 2
+  Data: 0
+  Amount: 1
+  Display: "display"
+  Lore:
+  - "lore"
+  Enchantments:
+  - "<附魔类型>:<等级>"
+  Meta:
+  Attributes:
+  Effects:
+  - "<特效内部名称>"
+  Skills:
+  - "<技能内部名称>"
+  Options:
+```
+我们将其中的选项一个个单独拿出来看
+- **example_name**<br>
+神器的内部名称，用来区分不同的神器<br>
+每一个神器都有一个内部名称<br>
+可以根据神器的内部名称来获得神器<br>
+名称可以随便取，区分大小写，但切记不要跟其他神器的内部名称重复!<br>
+以下 条件，特效，技能的内部名称与此类似!<br>
+
+- **Id**<br>
+设置物品种类
+可以根据物品id或者材料名称来设置物品<br>
+可选择填入 物品数字id 来设置物品<br>
+也可以填入 物品英文id 来设置物品<br>
+```yaml
+Id: 1 #石头
+Id: "grass" #草方块
+```
+
+- **Data**<br>
+设置物品的副Id<br>
+用于物品的耐久和方块种类<br>
+
+- **Amount**<br>
+设置物品的数量
+
+- **Display**<br>
+设置物品的展示名
+
+- **Lore**<br>
+设置物品的lore
+
+- **Enchantments**<br>
+设置物品的附魔<br>
+详情见 [物品附魔]()
+
+- **Meta**<br>
+设置物品的附加信息<br>
+如 头颅材质，药水类型，旗帜条纹<br>
+详情见 [物品附加信息]()<br>
+
+- **Effects**<br>
+设置物品的特效<br>
+
+- **Skills**<br>
+设置物品的技能<br>
+
+- **Options**<br>
+这是一个特殊的子选项<br>
+可为神器设置更多的属性
+详情见 [神器选项]()<br>
+
+## 物品附魔
+格式为: <附魔类型>:<等级>
+```yaml
+Enchantments:
+- "Durability:3"
+#为物品添加 耐久III 附魔
+```
+注意，等级不能超过32767!
+<br>
+
+## 物品属性
+待编辑...
+
+## 物品附加信息
+待编辑...
+
+## 神器选项(Options)
+
+###自定义耐久
+每一个神器都可以在lore中设置自定义耐久<br>
+自定义耐久并不会影响到物品的原版耐久<br>
+```yaml
+Options:
+  Durability:
+    Formal:
+    Dura:
+    MaxDura:
+```
+- Formal<br>
+在lore中显示的格式
+
+- **Dura**<br>
+设置神器的当前耐久<br>
+数值不能小于0，也不能大于最大耐久<br>
+若最大耐久为-1，则此选项无意义
+
+- **MaxDura**<br>
+设置神器的最大耐久<br>
+若想设置神器为无限耐久<br>
+则可将其设置为-1
+
+***
 
 # 条件
 条件用于判断是否处于某种情况<br>
@@ -294,86 +411,6 @@ TargetSelector: "@EIR{r=5}"
 - "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]}"
 - "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]} <概率>"
 ```
-
-***
-
-# 神器(Artifact)
-在AiurArtifacts里要制作一件神器并不难，不像特效和技能那样那么复杂<br>
-```yaml
-example_name:
-  Id: 2
-  Data:
-  Amount:
-  Display:
-  Lore:
-  Enchantments:
-  Meta:
-  Attributes:
-  Effects:
-  Skills:
-  Options:
-```
-我们将其中的选项一个个单独拿出来看
-- **example_name**<br>
-神器的内部名称，用来区分不同的神器<br>
-每一个神器都有一个内部名称<br>
-可以根据神器的内部名称来获得神器<br>
-内部名称可以随便取，但切记不要跟其他神器的内部名称重复!<br>
-
-- **Id**<br>
-设置物品种类
-可以根据物品id或者材料名称来设置物品<br>
-可选择填入 物品数字id 来设置物品<br>
-也可以填入 物品英文id 来设置物品<br>
-```yaml
-Id: 1 #石头
-Id: "grass" #草方块
-```
-
-- **Data**<br>
-设置物品的副Id<br>
-用于物品的耐久和方块种类<br>
-
-- **Amount**<br>
-设置物品的数量
-
-- **Display**<br>
-设置物品的展示名
-
-- **Lore**<br>
-设置物品的lore
-
-- **Enchantments**<br>
-设置物品的附魔<br>
-格式:<br>
-<附魔类型>:<等级>
-```yaml
-Enchantments:
-- "Durability:3"
-#为物品添加 耐久III 附魔
-```
-
-- **Meta**<br>
-设置物品的附加信息<br>
-如 头颅材质，药水类型，旗帜条纹<br>
-详情见 [物品附加信息]()<br>
-
-- **Effects**<br>
-设置物品的特效<br>
-设置特效只需将特效内部名称按顺序填入即可
-```yaml
-Effects:
-- "example1"
-- "example2"
-```
-
-- **Skills**<br>
-设置物品的技能<br>
-格式同Effects，参见Effects
-
-- **Options**<br>
-这是一个特殊的子选项<br>
-提供了大量的附加属性
 
 ***
 
