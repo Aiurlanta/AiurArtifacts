@@ -3,6 +3,11 @@
 [配置文件config.yml]()<br>
 [命令＆限权]()<br>
 [神器(Artifact)]()<br>
+&#8195;[物品属性]<br>
+&#8195;[物品附加信息]<br>
+&#8195;[物品选项]()<br>
+&#8195;&#8195;[灵魂绑定]<br>
+&#8195;&#8195;[自定义耐久]()<br>
 [条件(Condition)]()<br>
 [特效(Effect)]()<br>
 [技能(Skill)](https://github.com/Aiurlanta/AiurArtifacts#%E6%8A%80%E8%83%BD)<br>
@@ -88,7 +93,13 @@ Id: "grass" #草方块
 
 - **Enchantments**<br>
 设置物品的附魔<br>
-详情见 [物品附魔]()
+格式为: <附魔类型>:<等级>
+```yaml
+Enchantments:
+- "Durability:3"
+#为物品添加 耐久III 附魔
+```
+值得注意的是，等级不能超过32767!
 
 - **Meta**<br>
 设置物品的附加信息<br>
@@ -105,21 +116,12 @@ Id: "grass" #草方块
 这是一个特殊的子选项<br>
 可为神器设置更多的属性
 详情见 [神器选项]()<br>
-
-## 物品附魔
-格式为: <附魔类型>:<等级>
-```yaml
-Enchantments:
-- "Durability:3"
-#为物品添加 耐久III 附魔
-```
-注意，等级不能超过32767!
 <br>
 
 ## 物品属性
 待编辑...
 
-## 物品附加信息
+## 物品附加信息(Meta)
 待编辑...
 
 ## 神器选项(Options)
@@ -166,7 +168,7 @@ Options:
 [ 图片 ]
 
 值得注意的是，以下几种情况可能导致自定义耐久不起作用
-- Formal 中没有填入 %dura% 和 %maxdura%
+- Format 中没有填入 %dura% 和 %maxdura%
 - lore 中没有填入 %Durability%
 
 ***
