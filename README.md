@@ -61,8 +61,8 @@ example1:
   Or:
   - "health{h>70%}"
   - "health{h<40%}"
-#当技能释放者站在水中
-#并且技能释放者血量>70%或<40%时条件成立
+#当实体站在水中
+#并且血量>70%或<40%时条件成立
 ```
 <br>
 
@@ -73,7 +73,7 @@ example1:
   - "health{h<=70%}"
   - "health{h>=40%}"
 #与门条件（Or）为空，默认成立
-#当技能释放者血量在40%-70%之间时条件成立
+#当血量在40%-70%之间时条件成立
 ```
 
 <br>
@@ -84,7 +84,7 @@ example1:
   - "health{h>70%}"
   - "health{h<40%}"
 #与门条件（And）为空，默认成立
-#当技能释放者血量>70%或者<40%时条件成立
+#当血量>70%或者<40%时条件成立
 ```
 
 ### 条件的对立
@@ -93,7 +93,7 @@ example1:
 example1:
   And:
   - "[!]health{h>=70%}"
-#当技能释放者血量<70%时条件成立
+#当血量<70%时条件成立
 ```
 
 ***
@@ -116,7 +116,7 @@ exampleskill: #技能内部名称
   - "<技能类型>{参数}"
 ```
 如上面例子所示，一个完整的技能由以下几个部分构成
-- 条件（Conditions）
+- [条件（Conditions）](https://github.com/Aiurlanta/AiurArtifacts#%E6%9D%A1%E4%BB%B6-1)
 - 触发器（Trigger）
 - 目标选择器（TargetSelector）
 - **触发概率（Chance）**<br>
@@ -218,7 +218,7 @@ Skills:
 
 目标选择器|缩写|描述
 --|:--:|:--
-EntitiesInRadius{r=X}|@EIR{r=X}|将半径内的所有实体作为目标
+@EntitiesInRadius{r=X}|@EIR{r=X}|将半径内的所有实体作为目标
 @LivingEntitiesInRadius{r=X}|@LEIR{r=X}|将半径内的生物作为目标
 @MobsInRadius{r=X}|@MIR{r=X}|将半径内的生物作为目标
 @PlayersInRadius{r=X}|@PIR{r=X}|将半径内的玩家作为目标
@@ -248,8 +248,42 @@ maxradius(max)|3|环的最大半径
 minradius(min)|1|环的最小半径
 <br>
 
-**详细说明**<br>
+这时候就有人会问了，该怎么获取范围内的某一类型的生物呢?<br>
+比如说 如何将半径5范围内的僵尸和尸壳作为目标呢？<br>
+这时候，我们就需要用到条件了<br>
+首先配置好一个条件
+```yaml
+example1:
+  And:
+  - "EntityDetection{t=[zombie,husk]}"
+```
+然后在技能中调用这个条件
+```yaml
+Conditions:
+- "example1"
+TargetSelector: "@MIR{r=5}"
+```
+插件将会获取半径5范围内的所有生物<br>
+然后逐个进行条件检测，如果符合条件example1<br>
+那么就将这个生物添加到目标列表<br>
+释放技能时会将技能一个个释放到目标列表里的目标身上<br>
 
+**例子 - 1**<br>
+
+```yaml
+example1:
+  And:
+  - "Health{h>50%}"
+  - "target.EntityDetection{t=livingentity}"
+  - "[!]target.EntityDetection{t=[zombie,husk]}"
+# 血量必须 >50%
+# 目标必须是除僵尸和尸壳外的生物
+```
+```yaml
+Conditions:
+- "example1"
+TargetSelector: "@EIR{r=5}"
+```
 
 ## 子技能
 技能的多样性主要在于子技能的配置
