@@ -286,6 +286,10 @@ example_name:
 可以根据物品id或者材料名称来设置物品<br>
 可选择填入 物品数字id 来设置物品<br>
 也可以填入 物品英文id 来设置物品<br>
+```yaml
+Id: 1 #石头
+Id: "grass" #草方块
+```
 
 - **Data**<br>
 设置物品的副Id<br>
@@ -304,7 +308,11 @@ example_name:
 设置物品的附魔<br>
 格式:<br>
 <附魔类型>:<等级>
-
+```yaml
+Enchantments:
+- "Durability:3"
+#为物品添加 耐久III 附魔
+```
 
 - **Meta**<br>
 设置物品的附加信息<br>
@@ -314,8 +322,6 @@ example_name:
 - **Effects**<br>
 设置物品的特效<br>
 设置特效只需将特效内部名称按顺序填入即可
-
-&#8195;
 ```yaml
 Effects:
 - "example1"
@@ -327,7 +333,8 @@ Effects:
 格式同Effects，参见Effects
 
 - **Options**<br>
-这是一个特殊的子选项，提供了大量的附加属性
+这是一个特殊的子选项<br>
+提供了大量的附加属性
 
 ***
 
