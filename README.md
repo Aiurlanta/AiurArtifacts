@@ -403,19 +403,23 @@ Skills:
 目标选择器|缩写|描述
 --|:--:|:--
 @RandomLocationsInRing{a=X;min=X;max=X}||获取环内随机数量坐标作为目标
+<br>
+<br>
+
+- 参数说明
 
 参数|默认值|描述
 --|:--:|:--
 radius(r)|3|半径
 type(t)||实体类型
 world(w)||世界名
-x,y,z|XYZ坐标或坐标的偏移量
+x,y,z||XYZ坐标或坐标的偏移量
 amount(a)|1|数量
 maxradius(max)|3|环的最大半径
 minradius(min)|1|环的最小半径
 <br>
 
-举几个例子
+- 举几个例子
 ```yaml
 TargetSelector: "@MIR{r=5;type=[zombie,husk]}"
 选取僵尸和尸壳作为目标
