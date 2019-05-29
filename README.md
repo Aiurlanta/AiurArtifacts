@@ -261,7 +261,7 @@ example1:
 
 # 技能
 技能是AiurArtifacts插件的一大特点<br>
-可以使玩家在不同的情况之中释放不同的技能<br>
+可以让玩家释放许多强大的技能<br>
 ```yaml
 exampleskill: #技能内部名称
   Conditions:
