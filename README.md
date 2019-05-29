@@ -413,7 +413,7 @@ Skills:
 radius(r)|3|半径
 type(t)||实体类型
 world(w)||世界名
-x,y,z||XYZ坐标或坐标的偏移量
+x,y,z|0|XYZ坐标或坐标的偏移量
 amount(a)|1|数量
 maxradius(max)|3|环的最大半径
 minradius(min)|1|环的最小半径
@@ -440,6 +440,32 @@ TargetSelector: "@MIR{r=5;type=[!zombie,!husk]}"
 - "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]}"
 - "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]} <概率>"
 ```
+<br>
+如例子所示，我们还能为子技能设定目标，条件和概率<br>
+除此之外，我们还可以直接调用其他的技能<br>
+```yaml
+Skills:
+- "skill{s=<技能内部名称>}"
+```
+值得注意的是，使用skill调用其他技能时<br>
+仅仅是调用其子技能，并不会调用其目标选择器，触发器和概率
+
+```yaml
+example1:
+  Conditions:
+  - "example_condition"
+  TargetSelector: "@self"
+  Chance: 0.7
+  Trigger "..."
+  Skills:
+  - "..."
+example2:
+  TargetSelector; "@pir{r=3}"
+  Skills:
+  - "skill{s=example1}"
+```
+在上述例子example2中，通过skill来调用example1的子技能<br>
+并将其子技能逐一释放到@pir{r=3}所选的目标身上
 
 ***
 
