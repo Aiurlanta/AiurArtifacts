@@ -379,11 +379,12 @@ Skills:
 
 目标选择器|缩写|描述
 --|:--:|:--
-@EntitiesInRadius{r=X,t=X}|@EIR{r=X}|将半径内的所有实体作为目标
-@LivingEntitiesInRadius{r=X,t=X}|@LEIR{r=X}|将半径内的生物作为目标
-@MobsInRadius{r=X,t=X}|@MIR{r=X}|将半径内的生物作为目标
-@PlayersInRadius{r=X}|@PIR{r=X}|将半径内的玩家作为目标
-@PlayersInRing{min=X;max=X}||将环内的所有玩家作为目标
+@EntitiesInRadius{r;t}|@EIR{r=X}|将半径内的所有实体作为目标
+@EntitiesInRing{max;min;t}||将环内的所有实体作为目标
+@LivingEntitiesInRadius{r;t}|@LEIR{r=X}|将半径内的生物作为目标
+@LivingEntitiesInRing{max;min;t}||将环内的生物作为目标
+@PlayersInRadius{r}|@PIR{r}|将半径内的玩家作为目标
+@PlayersInRing{min;max}||将环内的所有玩家作为目标
 @PlayersInWorld|@World|将当前世界所有玩家作为目标
 @PlayersOnServer|@Server|将服务器内的所有玩家作为目标
 <br>
@@ -392,17 +393,18 @@ Skills:
 
 目标选择器|缩写|描述
 --|:--:|:--
-@SelfLocation| |将自己的坐标作为目标
-@Location{w=X;x=X;y=X;z=X}| |指定XYZ坐标作为目标
-@LocationDeviation{x=X;y=X;z=X}| |以自身为原点选取坐标作为目标
-@RandomLocation{r=X}| |取范围内随机坐标作为目标
+@LocationSelf| |将自己的坐标作为目标
+@Location{w;x;y;z}| |指定XYZ坐标作为目标
+@LocationDeviation{x;y;z}| |以自身为原点选取坐标作为目标
+@LocationRandom{r}| |取范围内随机坐标作为目标
 <br>
 
 - 多坐标目标
 
 目标选择器|缩写|描述
 --|:--:|:--
-@RandomLocationsInRing{a=X;min=X;max=X}||获取环内随机数量坐标作为目标
+@LocationRandomInRadius{a=X;min=X;max=X}||获取半径内随机数量坐标作为目标
+@LocationRandomInRing{a=X;min=X;max=X}||获取环内随机数量坐标作为目标
 <br>
 <br>
 
@@ -421,12 +423,12 @@ minradius(min)|1|环的最小半径
 
 - 举几个例子
 ```yaml
-TargetSelector: "@MIR{r=5;type=[zombie,husk]}"
+TargetSelector: "@LEIR{r=5;type=zombie,husk}"
 选取僵尸和尸壳作为目标
 ```
 
 ```yaml
-TargetSelector: "@MIR{r=5;type=[!zombie,!husk]}"
+TargetSelector: "@LEIR{r=5;type=!zombie,!husk}"
 选取除僵尸和尸壳外的生物作为目标
 ```
 <br>
@@ -437,8 +439,8 @@ TargetSelector: "@MIR{r=5;type=[!zombie,!husk]}"
 ```yaml
 - "<技能类型>{参数}"
 - "<技能类型>{参数} @<目标选择器>"
-- "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]}"
-- "<技能类型>{参数} @<目标选择器> ～Condition{[<条件>,<条件>]} <概率>"
+- "<技能类型>{参数} @<目标选择器> ～Condition{<条件>,<条件>}"
+- "<技能类型>{参数} @<目标选择器> ～Condition{<条件>,<条件>} <概率>"
 ```
 <br>
 如例子所示，我们还能为子技能设定目标，条件和概率<br>
