@@ -131,45 +131,15 @@ Enchantments:
 <br>
 
 ### 自定义耐久
+```yaml
+Options:
+  Durability: <耐久>
+```
 每一个神器都可以在lore中设置自定义耐久<br>
 自定义耐久并不会影响到物品的原版耐久<br>
-```yaml
-Options:
-  Durability:
-    Format: "＆a %dura%/%maxdura%"
-    Dura: 500
-    MaxDura: 500
-```
-- **Dura ＆ MaxDura**<br>
-设置神器的 当前耐久 和 最大耐久<br>
-当前耐久的数值不能小于零!并且不能大于最大耐久值!<br>
+拿在手上的神器在**破坏方块、攻击生物、射箭**时耐久会减少耐
+穿在身上的神器在**受到除摔落之外的伤害**时耐久会减少
 
-- **Format**<br>
-设置在lore中的展示内容<br>
-如<br>
-```yaml
-Format: "＆a %dura%/%maxdura%"
-Format: "耐久 ＆a %dura%/%maxdura%"
-```
-其中 %dura% 和 %maxdura% 会自动替换为你所填入的数值<br>
-<br>
-填好后我们还需要在lore中填入一个变量 %Durability% <br>
-届时 %Durability% 将替换为 Format中所设置的内容
-```yaml
-Lore:
-- "耐久值 %Durability%"
-Options:
-  Durability:
-    Dura: 256
-    MaxDura: 500
-    Format: "＆a %dura%/%maxdura%"
-```
-最终显示的是<br>
-[ 图片 ]
-
-值得注意的是，以下几种情况可能导致自定义耐久不起作用
-- Format 中没有填入 %dura% 和 %maxdura%
-- lore 中没有填入 %Durability%
 
 ***
 
