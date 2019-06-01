@@ -137,9 +137,9 @@ Options:
 ```
 每一个神器都可以在lore中设置自定义耐久<br>
 自定义耐久并不会影响到物品的原版耐久<br>
-拿在手上的神器在**破坏方块、攻击生物、射箭**时耐久会减少耐
+拿在手上的神器在**破坏方块、攻击生物、射箭**时耐久会减少耐久
 穿在身上的神器在**受到除摔落之外的伤害**时耐久会减少
-
+当然，自定义耐久还能根据原版的机制和神器上的耐久附魔进行计算
 
 ***
 
@@ -286,7 +286,7 @@ onDamagedByEntity{type=X}|type(t)－[实体类型](https://github.com/Aiurlanta/
 onDamagedByProjectile{pt=X;st=X}|ProjectileType(pt)－抛射物类型<br>ShooterType(st)－射击者类型|被抛射物击中时触发
 onDamagedByOther{type=X}|type(t)－[伤害类型](https://github.com/Aiurlanta/AiurArtifacts#%E9%99%84%E5%BD%95)|其他伤害因素（如摔落,爆炸）
 onAttack{type=X}|type(t)－目标实体的类型|近战攻击时触发
-onShooting|无|射出箭矢时触发
+onShootArrow|无|射出箭矢时触发
 onShootAttack{type=X}|type(t)－目标实体的类型|射出的箭矢击中目标时触发
 onArrowLand|无|箭矢落地时触发
 onKillEntity{type=X}|type(t)－死亡实体的类型|杀死实体时触发
@@ -438,6 +438,31 @@ example2:
 ```
 在上述例子example2中，通过skill来调用example1的子技能<br>
 并将其子技能逐一释放到@pir{r=3}所选的目标身上
+
+## 例子
+### 攻击目标时概率使目标着火10秒
+```yaml
+# Skill 配置
+lightningArrow:
+  TargetSelector: "@DiTarget"
+  Trigger: "onAttack"
+  Skills:
+  - "Ing{d=200}"
+```
+
+<br>
+
+### 箭矢落地雷击效果
+```yaml
+# Skill 配置
+lightningArrow:
+  TargetSelector: "@Arrow"
+  Trigger: "onArrowLand"
+  Skills:
+  - "lightning{d=3}"
+```
+当箭矢落地时100%在箭矢的位置召唤闪电
+<br>
 
 ***
 
