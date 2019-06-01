@@ -133,13 +133,16 @@ Enchantments:
 ### 自定义耐久
 ```yaml
 Options:
-  Durability: <耐久>
+  Durability:
+    Dura: <耐久>
+    Break: true #耐久为0时是否清除该物品
 ```
 每一个神器都可以在lore中设置自定义耐久<br>
 自定义耐久并不会影响到物品的原版耐久<br>
-拿在手上的神器在**破坏方块、攻击生物、射箭**时耐久会减少耐久
-穿在身上的神器在**受到除摔落之外的伤害**时耐久会减少
-当然，自定义耐久还能根据原版的机制和神器上的耐久附魔进行计算
+拿在手上的神器在**破坏方块、攻击生物、射箭**时耐久会减少耐久<br>
+穿在身上的神器在**受到除摔落之外的伤害**时耐久会减少<br>
+当然，自定义耐久还能根据原版的机制和神器上的耐久附魔进行计算<br>
+<br>
 
 ***
 
@@ -443,7 +446,7 @@ example2:
 ### 攻击目标时概率使目标着火10秒
 ```yaml
 # Skill 配置
-lightningArrow:
+fireSkill:
   TargetSelector: "@DiTarget"
   Trigger: "onAttack"
   Skills:
